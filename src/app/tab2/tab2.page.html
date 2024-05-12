@@ -1,17 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Filmes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card *ngFor="let noticias of lista_noticias">
+    <ion-img [src]="noticias.urlToImage"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ noticias.title }}</ion-card-title>
+      <ion-card-subtitle>{{ noticias.publishedAt | date:'dd/MM/yyyy HH:mm'}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{ noticias.description }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
