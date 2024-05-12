@@ -20,3 +20,5 @@ export class RjService {
     return this.http.get(url);
   }
 }
+
+//https://newsapi.org/v2/everything?q=Rio%20de%20Janeiro&from=2024-04-12&sortBy=publishedAt&apiKey=fbe2fb09498146e2af3c97a291ea71ee

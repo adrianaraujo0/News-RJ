@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { RjService } from '../news/rj.service';
 
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
