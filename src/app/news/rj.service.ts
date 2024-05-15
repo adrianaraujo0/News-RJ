@@ -10,7 +10,7 @@ export class RjService {
   private apiKey = "fbe2fb09498146e2af3c97a291ea71ee";
   private baseUrl = "https://newsapi.org/v2/everything";
   private query = "Rio de Janeiro";
-  private fromDate = "2024-04-12"; // Data mínima de publicação dos artigos
+  private fromDate = "21-04-2024"; // Data mínima de publicação dos artigos
   private sortBy = "publishedAt"; // Classificar por data de publicação
 
   constructor(public http: HttpClient) { }
