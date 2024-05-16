@@ -14,11 +14,11 @@ export class RjService {
 
   constructor(public http: HttpClient) { }
 
-  public getNewsRj() {
-    const url = `${this.baseUrl}?q=${this.query}&sortBy=${this.sortBy}&apiKey=${this.apiKey}`;
+  public getNewsRj(page: number = 1) {
+    const url = `${this.baseUrl}?q=${this.query}&sortBy=${this.sortBy}&apiKey=${this.apiKey}&page=${page}`;
     return this.http.get(url);
   }
 }
 
 
-//https://newsapi.org/v2/everything?q=Rio%20de%20Janeiro&sortBy=publishedAt&apiKey=fbe2fb09498146e2af3c97a291ea71ee
+//https://newsapi.org/v2/everything?q=Rio%20de%20Janeiro&sortBy=publishedAt&apiKey=fbe2fb09498146e2af3c97a291ea71ee&page=1

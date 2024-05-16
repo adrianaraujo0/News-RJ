@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="efeitoRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-down" refreshingSpinner="crescent"></ion-refresher-content>
+  </ion-refresher>
+  
   <ion-card *ngFor="let noticias of lista_noticias">
     <ion-img [src]="noticias.urlToImage"></ion-img>
     <ion-card-header>
