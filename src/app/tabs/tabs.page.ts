@@ -13,6 +13,7 @@ export class TabsPage {
       const content = document.querySelector('ion-content');
       if (content) {
         content.scrollToTop(300);
+        console.log('scrollToTop')
       }
     }
 
