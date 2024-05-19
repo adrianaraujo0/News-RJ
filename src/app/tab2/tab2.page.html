@@ -13,7 +13,7 @@
 
 <ion-content [fullscreen]="true" #content>
   <ion-refresher slot="fixed" (ionRefresh)="efeitoRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-down" refreshingSpinner="crescent"></ion-refresher-content>
+    <ion-refresher-content pullingIcon="arrow-down" refreshingSpinner="bubbles"></ion-refresher-content>
   </ion-refresher>
   
   <ion-card *ngFor="let noticias of lista_noticias">
@@ -30,4 +30,9 @@
       <p><strong>Conteúdo:</strong> {{ noticias.content }}</p>
     </ion-card-content>
   </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="efeitoScrollInfinito($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingtexe="Carregando mais notícias">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

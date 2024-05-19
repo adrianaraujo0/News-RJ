@@ -40,11 +40,23 @@ export class Tab2Page {
     }, 500);
   }
 
+  efeitoScrollInfinito(event: any){
+    this.page++;
+    this.carregaPagina();
+
+    setTimeout(()=>{
+      if (event) {
+        event.target.complete();
+        console.log('Finalizando ScrollInfinito');
+      }
+    }, 500)
+  }
+
   public lista_noticias = new Array<any>();
   public page:number = 1;
 
   carregaPagina() {
-    this.rjService.getNewsRj().subscribe({
+    this.rjService.getNewsRj(this.page).subscribe({
       next: (data: any) => {
         const response = (data as any);
         if (this.page == 1) {
@@ -52,7 +64,7 @@ export class Tab2Page {
         } else {
           this.lista_noticias = this.lista_noticias.concat(response.articles);
         }
-        console.log(this.lista_noticias);
+        console.log(this.lista_noticias); 
       },
       error: (error: any) => {
         console.log('Erro ao carregar notícias do Rio de Janeiro:', error);
