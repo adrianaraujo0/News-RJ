@@ -3,10 +3,15 @@
     <ion-title>
       Notícias do Brasil
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="scrollToTop()">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" #content>
   <ion-refresher slot="fixed" (ionRefresh)="efeitoRefresh($event)">
     <ion-refresher-content pullingIcon="arrow-down" refreshingSpinner="crescent"></ion-refresher-content>
   </ion-refresher>

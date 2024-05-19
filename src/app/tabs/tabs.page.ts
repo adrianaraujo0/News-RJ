@@ -9,4 +9,11 @@ export class TabsPage {
 
   constructor() {}
 
+    scrollToTop() {
+      const content = document.querySelector('ion-content');
+      if (content) {
+        content.scrollToTop(300);
+      }
+    }
+
 }

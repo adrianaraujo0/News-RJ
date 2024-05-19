@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RjService } from '../news/rj.service';
-import { LoadingController } from '@ionic/angular';
+import { IonContent, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -9,6 +9,9 @@ import { LoadingController } from '@ionic/angular';
   providers: [RjService]
 })
 export class Tab2Page {
+
+  
+  @ViewChild(IonContent, { static: false }) content!: IonContent;
 
   constructor(public rjService: RjService, public loadingController: LoadingController) {}
 
@@ -25,7 +28,7 @@ export class Tab2Page {
 
   efeitoRefresh(event: any) {
     this.page = 1;
-    //this.lista_noticias = [];
+    this.lista_noticias = [];
     this.carregaPagina();
     console.log('Iniciando operação assíncrona');
 
@@ -61,4 +64,8 @@ export class Tab2Page {
     this.efeitoLoading();
     this.carregaPagina();
   }
+
+    scrollToTop() {
+      this.content.scrollToTop(300);
+    }
 }
