@@ -1,0 +1,22 @@
+ion-toolbar {
+  --background: linear-gradient(135deg, #ff6b6b, #8e44ad);
+  --color: #fff;
+  --ion-toolbar-background: linear-gradient(135deg, #ff6b6b, #8e44ad);
+}
+
+ion-card {
+  text-align: center;
+  margin: 10px;
+}
+
+ion-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+ion-card-content {
+  font-size: 14px;
+  color: #555;
+}

@@ -5,3 +5,16 @@ ion-tab-bar{
     border-radius: 14px;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.02);
 }
+
+ion-tab-button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+ion-tab-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: rgba(43, 109, 183, 0.2);
+    border-radius: 100%;
+}
+
+
