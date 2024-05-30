@@ -1,0 +1,132 @@
+/* Estilos gerais */
+.centered {
+  text-align: center;
+}
+
+.ion-padding {
+  padding: 16px;
+}
+
+/* Estilos do ion-toolbar */
+ion-toolbar {
+  --background: linear-gradient(135deg, #ff6b6b, #8e44ad);
+  --color: #fff;
+}
+
+/* Estilos do ion-title */
+ion-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/* Estilos do ion-button */
+button {
+  background: linear-gradient(135deg, #8e44ad 0%, #ff6b6b 100%);
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease both;
+  animation-delay: 0.7s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff6b6b 0%, #8e44ad 100%);
+  color: #161616;
+}
+
+/* Estilos do ion-input */
+input {
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease both;
+  animation-delay: 0.6s;
+}
+
+input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Estilos do label */
+label {
+  display: block;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Estilos do ion-card */
+ion-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  --background: linear-gradient(135deg, #ff6b6b31, #8d44ad37);
+  animation: fadeIn 0.5s ease-in-out;
+  margin-top: 20px;
+}
+
+ion-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos do ion-card-header e ion-card-content */
+ion-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3880ff;
+  text-align: center;
+}
+
+ion-card-content {
+  color: #666;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Estilos específicos */
+.temperature {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff6f00;
+  margin: 20px 0;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -4,9 +4,12 @@ ion-toolbar {
   --ion-toolbar-background: linear-gradient(135deg, #ff6b6b, #8e44ad);
 }
 
-ion-title{
-  text-align: center;
-}
+  ion-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+  }
 
 ion-card {
   text-align: center;
