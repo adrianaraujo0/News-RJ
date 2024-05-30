@@ -8,34 +8,34 @@ import { Subscription } from 'rxjs';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  cityName: string = ''; 
-  weatherData: any;
-  weatherSubscription: Subscription | undefined;
+  nomeCidade: string = ''; 
+  dadosMeteorologicos: any;
+  assinaturaMeteorologica: Subscription | undefined;
 
-  constructor(private TempoService: TempoService) {}
+  constructor(private tempoService: TempoService) {}
 
-  searchWeather() {
-    if (this.cityName.trim() !== '') { 
-      this.weatherData = null;
+  pesquisarClima() {
+    if (this.nomeCidade.trim() !== '') { 
+      this.dadosMeteorologicos = null;
       
-      this.weatherSubscription = this.TempoService.getWeatherByCity(this.cityName).subscribe({
+      this.assinaturaMeteorologica = this.tempoService.obterClimaPorCidade(this.nomeCidade).subscribe({
         next: (data) => {
-          this.weatherData = data;
+          this.dadosMeteorologicos = data;
         },
         error: (error) => {
-          console.error('Error getting weather data', error);
+          console.error('Erro ao obter dados meteorológicos', error);
         }
       });
     }
   }
 
   ngOnDestroy() {
-    if (this.weatherSubscription) {
-      this.weatherSubscription.unsubscribe();
+    if (this.assinaturaMeteorologica) {
+      this.assinaturaMeteorologica.unsubscribe();
     }
   }
 
-  formatTime(timestamp: number): string {
+  formatarHora(timestamp: number): string {
     const date = new Date(timestamp * 1000);
     return date.toLocaleTimeString();
   }

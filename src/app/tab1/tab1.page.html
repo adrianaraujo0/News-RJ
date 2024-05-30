@@ -6,24 +6,24 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="centered">
-    <label for="cityName">Nome da cidade: </label>
-    <input id="cityName" placeholder="Digite o nome da cidade" [(ngModel)]="cityName">
-    <button expand="block" (click)="searchWeather()">Procurar</button>
+    <label for="nomeCidade">Nome da cidade: </label>
+    <input id="nomeCidade" placeholder="Digite o nome da cidade" [(ngModel)]="nomeCidade">
+    <button expand="block" (click)="pesquisarClima()">Procurar</button>
   </div>
 
-  <ion-card *ngIf="weatherData">
+  <ion-card *ngIf="dadosMeteorologicos">
     <ion-card-header>
-      <ion-card-title>Tempo em {{ weatherData.name }}</ion-card-title>
+      <ion-card-title>Tempo em {{ dadosMeteorologicos.name }}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p class="temperature">Temperatura: {{ weatherData.main.temp }}°C</p>
-      <p class="description"><strong>Descrição: {{ weatherData.weather[0].description }}</strong></p>
-      <p><strong>Pressão: {{ weatherData.main.pressure }} hPa</strong></p>
-      <p><strong>Umidade: {{ weatherData.main.humidity }}%</strong></p>
-      <p><strong>Velocidade do vento: {{ weatherData.wind.speed }} m/s</strong></p>
-      <p><strong>Nascer do sol: {{ formatTime(weatherData.sys.sunrise) }}</strong></p>
-      <p><strong>Pôr do sol: {{ formatTime(weatherData.sys.sunset) }}</strong></p>
+      <p class="temperature">Temperatura: {{ dadosMeteorologicos.main.temp }}°C</p>
+      <p class="description"><strong>Descrição: {{ dadosMeteorologicos.weather[0].description }}</strong></p>
+      <p><strong>Pressão: {{ dadosMeteorologicos.main.pressure }} hPa</strong></p>
+      <p><strong>Umidade: {{ dadosMeteorologicos.main.humidity }}%</strong></p>
+      <p><strong>Velocidade do vento: {{ dadosMeteorologicos.wind.speed }} m/s</strong></p>
+      <p><strong>Nascer do sol: {{ formatarHora(dadosMeteorologicos.sys.sunrise) }}</strong></p>
+      <p><strong>Pôr do sol: {{ formatarHora(dadosMeteorologicos.sys.sunset) }}</strong></p>
     </ion-card-content>    
   </ion-card>
 </ion-content>
