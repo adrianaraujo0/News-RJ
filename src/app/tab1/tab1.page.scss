@@ -21,7 +21,7 @@ ion-title {
   text-align: center;
 }
 
-/* Estilos do ion-button */
+/* Estilos do botão */
 button {
   background: linear-gradient(135deg, #8e44ad 0%, #ff6b6b 100%);
   color: white;
@@ -43,7 +43,7 @@ button:hover {
   color: #161616;
 }
 
-/* Estilos do ion-input */
+/* Estilos do input */
 input {
   text-align: center;
   width: 100%;
@@ -101,9 +101,17 @@ ion-card-title {
 ion-card-content {
   color: #666;
   font-size: 16px;
-  color: #666;
   margin-bottom: 10px;
   text-align: center;
+}
+
+/* Estilos dos containers */
+.container {
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
 }
 
 /* Estilos específicos */

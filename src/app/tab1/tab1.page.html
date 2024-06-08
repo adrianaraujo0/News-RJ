@@ -17,34 +17,63 @@
     </ion-card-header>
 
     <ion-card-content>
-      <p class="temperature">
-        <ion-icon name="thermometer-outline"></ion-icon>
-        Temperatura: {{ dadosMeteorologicos.main.temp }}°C
-      </p>
-      <p class="description">
-        <ion-icon name="partly-sunny-outline"></ion-icon>
-        <strong>Descrição: {{ dadosMeteorologicos.weather[0].description }}</strong>
-      </p>
-      <p>
-        <ion-icon name="speedometer-outline"></ion-icon>
-        <strong>Pressão: {{ dadosMeteorologicos.main.pressure }} hPa</strong>
-      </p>
-      <p>
-        <ion-icon name="water-outline"></ion-icon>
-        <strong>Umidade: {{ dadosMeteorologicos.main.humidity }}%</strong>
-      </p>
-      <p>
-        <ion-icon name="cloud-outline"></ion-icon>
-        <strong>Velocidade do vento: {{ dadosMeteorologicos.wind.speed }} m/s</strong>
-      </p>
-      <p>
-        <ion-icon name="sunny-outline"></ion-icon>
-        <strong>Nascer do sol: {{ formatarHora(dadosMeteorologicos.sys.sunrise) }}</strong>
-      </p>
-      <p>
-        <ion-icon name="moon-outline"></ion-icon>
-        <strong>Pôr do sol: {{ formatarHora(dadosMeteorologicos.sys.sunset) }}</strong>
-      </p>
+      <div class="container">
+        <p class="temperature">
+          <ion-icon name="thermometer-outline"></ion-icon>
+          <strong>Temperatura {{ dadosMeteorologicos.main.temp }}°C</strong>
+        </p>
+        <p>
+          <ion-icon name="thermometer-outline"></ion-icon>
+          <strong>Sensação térmica: {{ dadosMeteorologicos.main.feels_like }}°C</strong>
+        </p>
+      </div>
+
+      <div class="container">
+        <p>
+          <ion-icon name="thermometer-outline"></ion-icon>
+          <strong>Temperatura mínima: {{ dadosMeteorologicos.main.temp_min }}°C</strong>
+        </p>
+        <p>
+          <ion-icon name="thermometer-outline"></ion-icon>
+          <strong>Temperatura máxima: {{ dadosMeteorologicos.main.temp_max }}°C</strong>
+        </p>
+      </div>
+
+      <div class="container">
+        <p class="description">
+          <ion-icon name="partly-sunny-outline"></ion-icon>
+          <strong>Descrição: {{ dadosMeteorologicos.weather[0].description }}</strong>
+        </p>
+      </div>
+
+      <div class="container">
+        <p>
+          <ion-icon name="speedometer-outline"></ion-icon>
+          <strong>Pressão: {{ dadosMeteorologicos.main.pressure }} hPa</strong>
+        </p>
+        <p>
+          <ion-icon name="water-outline"></ion-icon>
+          <strong>Umidade: {{ dadosMeteorologicos.main.humidity }}%</strong>
+        </p>
+      </div>
+
+      <div class="container">
+        <p>
+          <ion-icon name="cloud-outline"></ion-icon>
+          <strong>Velocidade do vento: {{ dadosMeteorologicos.wind.speed }} m/s</strong>
+        </p>
+      </div>
+      
+      <div class="container">
+        <p>
+          <ion-icon name="sunny-outline"></ion-icon>
+          <strong>Nascer do sol: {{ formatarHora(dadosMeteorologicos.sys.sunrise) }}</strong>
+        </p>
+        <p>
+          <ion-icon name="moon-outline"></ion-icon>
+          <strong>Pôr do sol: {{ formatarHora(dadosMeteorologicos.sys.sunset) }}</strong>
+        </p>
+      </div>
     </ion-card-content>    
   </ion-card>
 </ion-content>
