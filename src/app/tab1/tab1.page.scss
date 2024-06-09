@@ -122,6 +122,16 @@ ion-card-content {
   margin: 20px 0;
 }
 
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+
 /* Animações */
 @keyframes fadeIn {
   from { opacity: 0; }
