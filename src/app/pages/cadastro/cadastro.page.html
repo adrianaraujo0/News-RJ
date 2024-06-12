@@ -21,7 +21,7 @@
       </div>
       <div class="input-group">
         <label for="password">Confirmar Senha</label>
-        <input type="password" id="password" placeholder="Confirmar Senha">
+        <input [(ngModel)]="confirmsenha" type="password" id="password" placeholder="Confirmar Senha">
       </div>
       <button class="login-button" (click)="signup()">Confirmar Cadastro</button>
       <div class="ou">

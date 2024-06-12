@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 register();
 
 @Component({
@@ -10,6 +14,25 @@ register();
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private alertCtrl: AlertController
+  ) { }
 
+  async logoff() {
+    try {
+      await this.afAuth.signOut();
+      console.log('Usuario deslogado:');
+      this.router.navigate(['/login']);
+    } catch (error) {
+      console.error('Erro ao deslogar:', error);
+      const alert = await this.alertCtrl.create({
+        header: 'Erro',
+        message: 'Não foi possível deslogar. Tente novamente mais tarde.',
+        buttons: ['OK']
+      });
+      await alert.present();
+    }
+  }
 }

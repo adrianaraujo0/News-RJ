@@ -9,9 +9,9 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage implements OnInit {
-  email: string = '';
-  password: string = '';
-
+  public email: string = '';
+  public password: string = '';
+  public confirmsenha: string = '';
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
@@ -20,11 +20,18 @@ export class CadastroPage implements OnInit {
 
   async signup() {
     try {
-      const user = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
-      this.router.navigate(['/login']);
+      if (this.password === this.confirmsenha){
+        const user = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
+        this.router.navigate(['/login']);
+      }
+      else{
+        this.showAlert('Senhas Diferentes', 'As senha deve ser a mesma')
+      }
+      
     } catch (error: any) {
       this.showAlert('Erro', error.message);
     }
+    
   }
 
   async showAlert(header: string, message: string) {
@@ -35,6 +42,8 @@ export class CadastroPage implements OnInit {
     });
     await alert.present();
   }
+
+  
 
   ngOnInit() {
   }
