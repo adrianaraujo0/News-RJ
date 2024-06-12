@@ -4,15 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'cadastro',
-    loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
+    loadChildren: () => import('./pages/cadastro/cadastro.module').then(m => m.CadastroPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }
 
 ];

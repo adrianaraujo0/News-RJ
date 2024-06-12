@@ -12,18 +12,18 @@
     <div class="login-card">
       <h1 class="login-title">Cadastro</h1>
       <div class="input-group">
-        <label for="email">Login</label>
-        <input type="email" id="email" placeholder="Login">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite seu email" [(ngModel)]="email">
       </div>
       <div class="input-group">
         <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="Digite sua senha">
+        <input type="password" id="password" placeholder="Digite sua senha" [(ngModel)]="password">
       </div>
       <div class="input-group">
         <label for="password">Confirmar Senha</label>
         <input type="password" id="password" placeholder="Confirmar Senha">
       </div>
-      <button class="login-button">Confirmar Cadastro</button>
+      <button class="login-button" (click)="signup()">Confirmar Cadastro</button>
       <div class="ou">
         <p>Ou</p>
       </div>
