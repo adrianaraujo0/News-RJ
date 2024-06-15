@@ -1,8 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button text="Login" icon="chevron-back-outline"></ion-back-button>
-    </ion-buttons>
     <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,14 +11,23 @@
       <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" placeholder="Digite seu email" [(ngModel)]="email">
+        <div *ngIf="emailError" class="error-message">{{ emailError }}</div>
       </div>
       <div class="input-group">
         <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="Digite sua senha" [(ngModel)]="password">
+        <div class="password-input">
+          <input type="{{ showPassword ? 'text' : 'password' }}" id="password" placeholder="Digite sua senha" [(ngModel)]="password">
+          <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" class="password-toggle" (click)="togglePasswordVisibility()"></ion-icon>
+        </div>
+        <div *ngIf="passwordError" class="error-message">{{ passwordError }}</div>
       </div>
       <div class="input-group">
         <label for="password">Confirmar Senha</label>
-        <input [(ngModel)]="confirmsenha" type="password" id="password" placeholder="Confirmar Senha">
+        <div class="password-input">
+          <input type="{{ showConfirmSenha ? 'text' : 'password' }}" id="confirmPassword" placeholder="Confirmar Senha" [(ngModel)]="confirmsenha">
+          <ion-icon name="{{ showConfirmSenha ? 'eye-off' : 'eye' }}" class="password-toggle" (click)="toggleConfirmSenhaVisibility()"></ion-icon>
+        </div>
+        <div *ngIf="confirmSenhaError" class="error-message">{{ confirmSenhaError }}</div>
       </div>
       <button class="login-button" (click)="signup()">Confirmar Cadastro</button>
       <div class="ou">

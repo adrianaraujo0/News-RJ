@@ -4,6 +4,29 @@ ion-toolbar {
   --ion-toolbar-background: linear-gradient(135deg, #ff6b6b, #8e44ad);
 }
 
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-input {
+  position: relative;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
 ion-title {
   font-size: 20px;
   font-weight: bold;

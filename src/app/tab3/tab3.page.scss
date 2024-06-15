@@ -4,6 +4,21 @@ ion-toolbar {
   --ion-toolbar-background: linear-gradient(135deg, #ff6b6b, #8e44ad);
 }
 
+.welcome-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.user-icon {
+  font-size: 24px;
+  color: #007bff;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
   ion-title {
     font-size: 17px;
     font-weight: bold;

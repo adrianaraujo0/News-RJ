@@ -13,6 +13,7 @@ register();
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  userName: string = '';
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -24,6 +25,7 @@ export class Tab3Page {
     try {
       await this.afAuth.signOut();
       console.log('Usuario deslogado:');
+      localStorage.removeItem('userName');
       this.router.navigate(['/login']);
     } catch (error) {
       console.error('Erro ao deslogar:', error);
@@ -35,4 +37,9 @@ export class Tab3Page {
       await alert.present();
     }
   }
+
+  ngOnInit() {
+    this.userName = localStorage.getItem('userName') || 'Visitante';
+  }
+
 }
